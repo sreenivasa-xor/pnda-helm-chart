@@ -23,6 +23,7 @@ imagePullPolicy: IfNotPresent
 
 worker:
   ui_port: 8080
+  cores: 4
 
 ingress:
   enabled: false
@@ -30,7 +31,9 @@ ingress:
 master:
   port: 7077
   ui_port: 8080
-
+  properties:
+    spark.deploy.defaultCores: "1"
+    spark.deploy.spreadOut: "true"
   ## Additional env variables
   customEnv: {}
 

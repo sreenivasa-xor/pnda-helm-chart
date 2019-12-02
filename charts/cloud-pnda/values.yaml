@@ -395,6 +395,11 @@ opentsdb:
 spark-standalone:
   enabled: true
   workers: 1
+  worker:
+    cores: 4
+  master:
+    properties:
+      spark.deploy.defaultCores: "1"
   ingress:
     enabled: true
     hosts:

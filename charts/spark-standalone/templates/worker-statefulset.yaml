@@ -37,8 +37,10 @@ spec:
         args:
         - standalone
         - worker
-        - spark://{{ template "spark.fullname" . }}:7077
         - --webui-port {{ .Values.worker.ui_port }}
+        - --cores {{ .Values.worker.cores }}
+        - spark://{{ template "spark.fullname" . }}:7077
+
 
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
